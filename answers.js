@@ -6,7 +6,6 @@
   * @returns {Array} 
 */
 
-let arraySize = 6;
 function newArrayGivenValues(arraySize, value) {
   let arr = [];
   for (let index = 0; index < arraySize; index++) {
@@ -14,7 +13,7 @@ function newArrayGivenValues(arraySize, value) {
   }
   return arr;
 }
-console.log(newArrayGivenValues(6,'a'));
+console.log(newArrayGivenValues(3,'a'));
 
 /** 
   * Task description: Write a method that reverts input array 
@@ -26,7 +25,7 @@ console.log(newArrayGivenValues(6,'a'));
 function reversArray(arr) {
   return arr.reverse();
 }
-console.log(reversArray([2,4,6]));
+console.log(reversArray([1,2,3,4]));
 
 /** 
   * Task description: Write a method that clears array from all unnecessary elements, like false, undefined, empty strings, zero, null 
@@ -46,7 +45,7 @@ function keepOnlyNum(array) {
   }
   return arr;
 }
-console.log(keepOnlyNum([0, 1, false, 2, undefined, '', 3, null]));
+console.log(keepOnlyNum([0, 1,"", false, 2, undefined, '', 3, null]));
 
 
 /** 
@@ -56,7 +55,20 @@ console.log(keepOnlyNum([0, 1, false, 2, undefined, '', 3, null]));
   * @returns {Array} 
 */
 
+function task4(arr) {
+  let obj= {};
+  for (let i = 0; i < arr.length; i++) {
+    obj[arr[i][0]]= arr [i][1];
+  }
+    return obj;
+}
+  let test=[
+    ["a",1],
+    ["a",2],
+    ["a",3],
+  ];
 
+  console.log(task4(test));
 
 /** 
   * Task description: Write a method that returns an array without duplicated values
@@ -66,10 +78,10 @@ console.log(keepOnlyNum([0, 1, false, 2, undefined, '', 3, null]));
   * @returns {Array} 
 */
 
-function removeDuplicates(array, args) {
-  let arr=[];
-    for (let i = 0; i < array.length; i++) {
-      const element = array[i];
-      
-    }
-}
+const task5 = (arr) => {
+    return arr.filter((el, index) => {
+    return arr.indexOf(el) == index;
+    });
+};
+
+console.log(task5([1,1,3,4,5,5,8,8]));
